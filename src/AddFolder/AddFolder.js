@@ -27,7 +27,7 @@ export default class AddFolder extends Component {
     })
   }
 
-  handleSumitFolder = (event) =>{
+  handleSubmitFolder = (event) =>{
     event.preventDefault();
     let nameError=this.validateName();
     const foldername=this.state.folderName.value;
@@ -73,7 +73,7 @@ export default class AddFolder extends Component {
       <div>
         <h2>Add Folder</h2>
 
-        <form className="add-folder" onSubmit={e=>this.handleSumitFolder(e)}> 
+        <form className="add-folder" onSubmit={e=>this.handleSubmitFolder(e)}> 
           <label htmlFor="name" className="user">
           {this.state.folderName.touched && (
           <ValidateError message={nameError} />
