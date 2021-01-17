@@ -19,7 +19,7 @@ export default class AddNote extends Component {
         value: "",
         touched: false,
       },
-      folderId: " ",
+      folderid: " ",
     };
   }
 
@@ -48,7 +48,7 @@ export default class AddNote extends Component {
     const noteName = this.state.noteName.value;
     const content = this.state.content.value;
     const modified = new Date();
-    const folderID = event.currentTarget.querySelector("select").value;
+    const folderid = event.currentTarget.querySelector("select").value;
     if (nameError) {
       this.setState({
         noteName: {
@@ -76,7 +76,7 @@ export default class AddNote extends Component {
       body: JSON.stringify({
         name: noteName,
         content: content,
-        folderId: folderID,
+        folderid: folderid,
         modified,
       }),
     })
