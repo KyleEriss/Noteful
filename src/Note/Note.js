@@ -23,14 +23,13 @@ export default class Note extends React.Component {
     })
       .then((res) => {
         if (!res.ok) return res.json().then((e) => Promise.reject(e));
-        return res.json();
+        
       })
       .then(() => {
         this.context.deleteNote(id);
-        this.props.onDeleteNote(id);
       })
       .catch((error) => {
-        console.error({ error });
+        console.error(JSON.stringify(error));
       });
   };
   render() {
